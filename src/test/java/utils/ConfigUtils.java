@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigUtils {
+public class ConfigUtils extends Properties {
     public static Properties readConfig(String path) throws IOException {
 
         File propFile = new File(path);

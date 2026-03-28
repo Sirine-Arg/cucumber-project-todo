@@ -10,16 +10,16 @@ import org.testng.annotations.DataProvider;
         plugin = {
                 "pretty",
                 "html:target/cucumber-report.html",
-                "json:target/cucumber.json"
+                "json:target/cucumber.json",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // ✅ Allure plugin
         },
         monochrome = true
 )
-
 public class TestRunner extends AbstractTestNGCucumberTests {
+
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = true) // ✅ enable parallel execution
     public Object[][] scenarios() {
         return super.scenarios();
     }
-
 }
